@@ -1,0 +1,19 @@
+<h1>Beer App</h1>
+<div>
+  <input type="text" [(ngModel)]="newBeer" placeholder="Add a beer" />
+  <button (click)="addBeer()">Add</button>
+</div>
+<hr />
+<h2>Fav Beer</h2>
+<ul>
+  <li *ngFor="let b of favs">{{ b }}</li>
+</ul>
+<hr />
+
+<app-beer
+  *ngFor="let b of beers"
+  [name]="b"
+  [isFav]="isinFav(b)"
+  (addFav)="addFav($event)"
+  (deleteFav)="deleteFav($event)"
+></app-beer>
