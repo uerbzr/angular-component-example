@@ -17,3 +17,14 @@
   (addFav)="addFav($event)"
   (deleteFav)="deleteFav($event)"
 ></app-beer>
+
+<hr />
+
+@for (b of beers; track b) {
+<app-beer
+  [name]="b"
+  [isFav]="isinFav(b)"
+  (addFav)="addFav($event)"
+  (deleteFav)="deleteFav($event)"
+></app-beer>
+}
