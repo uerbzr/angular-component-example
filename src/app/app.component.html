@@ -4,7 +4,7 @@
   <button (click)="addBeer()">Add</button>
 </div>
 <hr />
-<h2>Fav Beer</h2>
+<h2>Fav Beer (*ngFor)</h2>
 <ul>
   <li *ngFor="let b of favs">{{ b }}</li>
 </ul>
@@ -18,6 +18,14 @@
   (deleteFav)="deleteFav($event)"
 ></app-beer>
 
+<hr />
+
+<h2>Fav Beer (&#64;For)</h2>
+<ul>
+  @for (b of favs; track b) {
+  <li>{{ b }}</li>
+  }
+</ul>
 <hr />
 
 @for (b of beers; track b) {
